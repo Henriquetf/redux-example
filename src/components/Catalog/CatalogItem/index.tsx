@@ -1,17 +1,22 @@
 import React, { useCallback } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { addProductToCartRequest } from '../../../store/modules/cart/actions';
 import { Product } from '../../../store/modules/cart/types';
+import { State } from '../../../store/modules/rootReducer';
 
 import styles from './CatalogItem.module.css';
 
 interface CatalogItemProps {
-  product: Product
+  product: Product;
 }
 
 const CatalogItem: React.FC<CatalogItemProps> = ({ product }) => {
   const dispatch = useDispatch();
+
+  const isOutOfStock = useSelector<State, boolean>(
+    (state) => state.cart.outOfStockProducts.includes(product.id),
+  );
 
   const handleAddProductToCart = useCallback(() => {
     dispatch(addProductToCartRequest(product));
@@ -32,6 +37,8 @@ const CatalogItem: React.FC<CatalogItemProps> = ({ product }) => {
       >
         Buy
       </button>
+
+      {isOutOfStock && <span className={styles.outOfStock}>Out of stock</span>}
     </article>
   );
 };

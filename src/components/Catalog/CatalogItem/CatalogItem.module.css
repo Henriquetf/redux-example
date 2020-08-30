@@ -10,3 +10,7 @@
 
   border-radius: 3px;
 }
+
+.outOfStock {
+  color: #e461cb;
+}
