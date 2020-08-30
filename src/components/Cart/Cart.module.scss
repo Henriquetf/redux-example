@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+
+  margin: 20px;
+  padding: 40px 0;
+
+  border-radius: 10px;
+
+  background: #1b2431;
+  box-shadow: 0px 10px 20px -20px #081323;
+}
+
+.table {
+  flex: 1;
+
+  text-align: center;
+
+  border-collapse: collapse;
+
+  th {
+    padding: 10px 25px;
+  }
+  td {
+    padding: 4px 0;
+  }
+}
