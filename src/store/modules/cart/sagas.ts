@@ -7,7 +7,7 @@ import { getProductStock } from '../../../services/api/stock';
 import { State } from '../rootReducer';
 
 import { addProductToCartFailure, AddProductToCartRequestAction, addProductToCartSuccess } from './actions';
-import { ProductStock } from './types';
+import { CartActionTypes, ProductStock } from './types';
 
 function* checkProductStock({ payload }: AddProductToCartRequestAction) {
   const { product } = payload;
@@ -26,5 +26,5 @@ function* checkProductStock({ payload }: AddProductToCartRequestAction) {
 }
 
 export default all([
-  takeLatest('@cart/ADD_PRODUCT_TO_CART_REQUEST', checkProductStock),
+  takeLatest(CartActionTypes.addProductToCartRequest, checkProductStock),
 ]);

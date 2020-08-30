@@ -1,7 +1,7 @@
 import { Reducer } from 'redux';
 import { produce } from 'immer';
 
-import { CartState } from './types';
+import { CartActionTypes, CartState } from './types';
 import { CartActions } from './actions';
 
 const initialState: CartState = {
@@ -12,7 +12,7 @@ const initialState: CartState = {
 const cart: Reducer<CartState, CartActions> = (state = initialState, action) =>
   produce(state, ((draft) => {
     switch (action.type) {
-      case '@cart/ADD_PRODUCT_TO_CART_SUCCESS': {
+      case CartActionTypes.addProductToCartSuccess: {
         const { product } = action.payload;
 
         const productInCartIndex = draft.items.findIndex(
@@ -31,7 +31,7 @@ const cart: Reducer<CartState, CartActions> = (state = initialState, action) =>
         break;
       }
 
-      case '@cart/ADD_PRODUCT_TO_CART_FAILURE': {
+      case CartActionTypes.addProductToCartFailure: {
         const { productId } = action.payload;
 
         if (!draft.outOfStockProducts.includes(productId)) {
