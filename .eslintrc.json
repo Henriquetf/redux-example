@@ -32,6 +32,7 @@
       "error",
       { "props": true, "ignorePropertyModificationsFor": ["draft"] }
     ],
-    "default-case": "off"
+    "default-case": "off",
+    "react/prop-types": "off"
   }
 }

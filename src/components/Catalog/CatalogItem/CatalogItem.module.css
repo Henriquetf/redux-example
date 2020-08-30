@@ -1,0 +1,12 @@
+.product {
+  margin: 10px 0;
+}
+
+.button {
+  padding: 8px 16px;
+  margin: 0 8px;
+
+  background: #161e29;
+
+  border-radius: 3px;
+}

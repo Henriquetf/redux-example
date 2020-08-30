@@ -10,16 +10,3 @@
   background: #1b2431;
   box-shadow: 0px 10px 20px -20px #081323;
 }
-
-.product {
-  margin: 10px 0;
-}
-
-.button {
-  padding: 8px 16px;
-  margin: 0 8px;
-
-  background: #161e29;
-
-  border-radius: 3px;
-}
