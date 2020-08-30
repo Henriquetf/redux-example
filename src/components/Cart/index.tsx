@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { State } from '../../store';
+import { State } from '../../store/modules/rootReducer';
 import { CartItem } from '../../store/modules/cart/types';
 import formatCurrency from '../../utils/formatCurrency';
 

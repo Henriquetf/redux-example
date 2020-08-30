@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
 
 import cart from './cart/reducer';
+import { CartState } from './cart/types';
 
-const rootReducer = combineReducers({
+export interface State {
+  cart: CartState;
+}
+
+const rootReducer = combineReducers<State>({
   cart,
 });
 
