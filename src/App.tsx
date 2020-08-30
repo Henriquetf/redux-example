@@ -5,6 +5,8 @@ import store from './store';
 
 import Catalog from './components/Catalog';
 
+import './styles/global.css';
+
 const App: React.FC = () => (
   <Provider store={store}>
     <Catalog />
